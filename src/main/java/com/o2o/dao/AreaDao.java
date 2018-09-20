@@ -12,5 +12,5 @@ public interface AreaDao {
      * 获取地区数据
      * @return
      */
-    public List<Area> queryArea();
+     List<Area> queryArea();
 }
