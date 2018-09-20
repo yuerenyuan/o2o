@@ -1,0 +1,18 @@
+2018-09-20 17:24:36.496[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-20 17:24:36.535[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), 1(Integer), 1(Integer), 测试店铺(String), test(String), test(String), test(String), test(String), null, 2018-09-20 17:24:35.882(Timestamp), null, 1(Integer), 审核中(String)
+2018-09-20 17:24:36.546[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1
+2018-09-20 17:48:23.053[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, priority=?, last_edit_time=? where shop_id=? 
+2018-09-20 17:48:23.083[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 跟新店铺(String), 6(Integer), 2018-09-20 17:48:22.723(Timestamp), null
+2018-09-20 17:48:23.085[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 0
+2018-09-20 17:49:17.153[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, priority=?, last_edit_time=? where shop_id=? 
+2018-09-20 17:49:17.183[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 跟新店铺(String), 6(Integer), 2018-09-20 17:49:16.818(Timestamp), 1(Integer)
+2018-09-20 17:49:17.192[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-20 17:51:33.123[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, priority=?, last_edit_time=? where shop_id=? 
+2018-09-20 17:51:33.162[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 跟新店铺(String), 6(Integer), 2018-09-20 17:51:32.702(Timestamp), 1(Integer)
+2018-09-20 17:51:33.171[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-20 17:52:01.146[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, priority=?, last_edit_time=? where shop_id=? 
+2018-09-20 17:52:01.186[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 跟新店铺66(String), 6(Integer), 2018-09-20 17:52:00.703(Timestamp), 1(Integer)
+2018-09-20 17:52:01.195[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-20 18:07:39.759[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-20 18:07:39.792[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), 1(Integer), 1(Integer), 测试店铺(String), test(String), test(String), test(String), null, null, 2018-09-20 18:07:39.49(Timestamp), null, 1(Integer), 审核中(String)
+2018-09-20 18:07:39.801[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1

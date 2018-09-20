@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class Shop {
 
-	private Long shopId;//店铺id
+	private Integer shopId;//店铺id
 	private String shopName;//店铺名称
 	private String shopDesc;//店铺描述
 	private String shopAddr;//店铺地址
@@ -26,14 +26,16 @@ public class Shop {
 	private PersonInfo owner;//用户信息实体类
 	private ShopCategory shopCategory;//店铺类别实体类
 	private ShopCategory parentCategory;
-	
-	
-	public Long getShopId() {
+
+
+	public Integer getShopId() {
 		return shopId;
 	}
-	public void setShopId(Long shopId) {
+
+	public void setShopId(Integer shopId) {
 		this.shopId = shopId;
 	}
+
 	public String getShopName() {
 		return shopName;
 	}

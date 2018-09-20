@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class ShopCategory {
 
-	private Long shopCategoryId;//id
+	private Integer shopCategoryId;//id
 	private String shopCategoryName;//店铺类别名称
 	private String shopCategoryDesc;//店铺类别描述
 	private String shopCategoryImg;//店铺类别图片连接地址
@@ -17,11 +17,11 @@ public class ShopCategory {
 	private Date lastEditTime;//修改时间
 	private Long parentId; //上级id
 
-	public Long getShopCategoryId() {
+	public Integer getShopCategoryId() {
 		return shopCategoryId;
 	}
 
-	public void setShopCategoryId(Long shopCategoryId) {
+	public void setShopCategoryId(Integer shopCategoryId) {
 		this.shopCategoryId = shopCategoryId;
 	}
 
