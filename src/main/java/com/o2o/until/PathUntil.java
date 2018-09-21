@@ -17,7 +17,7 @@ public class PathUntil {
         return basePath;
     }
     public static String getShopImagePath(Integer shopId){
-        String imagePath="/upload/items/shop"+shopId+"/";
+        String imagePath="upload/items/shop"+shopId+"/";
         imagePath.replace("/",separator);
         return imagePath;
     }

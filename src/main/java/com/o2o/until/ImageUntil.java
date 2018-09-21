@@ -20,6 +20,7 @@ public class ImageUntil {
     private static String basePath=Thread.currentThread().getContextClassLoader().getResource("").getPath();
     private static final SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMddHHmmss");
     private static final Random random=new Random();
+    private static CommonsMultipartFile cFile;
     public static  String generateThumbnails(CommonsMultipartFile thumbnails,String targetAddr){
         String realFileName=getRandomFileName();
         String extension=getFileExtension(thumbnails);
@@ -28,6 +29,31 @@ public class ImageUntil {
         File desk=new File(PathUntil.getImeBasePath()+relativeAddr);
         try{
             Thumbnails.of(thumbnails.getInputStream())
+                    .size(500, 500).watermark(
+                    Positions.BOTTOM_RIGHT,
+                    ImageIO.read(new File(basePath+"school.jpg")), 0.5f)
+                    .outputQuality(0.8f).toFile(
+                    desk);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return relativeAddr;
+    }
+
+    /**
+     * generateThumbnails重载
+     * @param thumbnails
+     * @param targetAddr
+     * @return
+     */
+    public static  String generateThumbnails(File thumbnails,String targetAddr){
+        String realFileName=getRandomFileName();
+        String extension=getFileExtension(thumbnails);
+        makeDirPath(targetAddr);
+        String relativeAddr=targetAddr+realFileName+extension;
+        File desk=new File(PathUntil.getImeBasePath()+relativeAddr);
+        try{
+            Thumbnails.of(thumbnails)
                     .size(500, 500).watermark(
                     Positions.BOTTOM_RIGHT,
                     ImageIO.read(new File(basePath+"school.jpg")), 0.5f)
@@ -52,6 +78,16 @@ public class ImageUntil {
     }
 
     /**
+     * getFileExtension重载
+     * @param cFile1
+     * @return
+     */
+    private static String getFileExtension(File cFile1) {
+        String originalFileName=cFile.getOriginalFilename();
+        return originalFileName.substring(originalFileName.lastIndexOf("."));
+    }
+
+    /**
      *获取输入流的扩展名png jpg
      * @param
      * @return
@@ -61,7 +97,6 @@ public class ImageUntil {
         String originalFileName=cFile.getOriginalFilename();
         return originalFileName.substring(originalFileName.lastIndexOf("."));
     }
-
     /**
      * 生成随机名称的文件
      * @return
@@ -72,7 +107,4 @@ public class ImageUntil {
         return data+number;
 
     }
-
-
-
 }
