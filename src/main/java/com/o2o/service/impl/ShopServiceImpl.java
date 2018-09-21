@@ -10,6 +10,7 @@ import com.o2o.until.ImageUntil;
 import com.o2o.until.PathUntil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.annotation.Resource;
 import java.io.File;
@@ -59,10 +60,13 @@ public class ShopServiceImpl implements ShopService{
         return new ShopExecution(ShopStateEnum.CHECK,shop);
     }
 
+
+
     private void addShopImg(Shop shop, File shopImg) {
             //获取shop图片目录的相对值路径
             String dest= PathUntil.getShopImagePath(shop.getShopId());
             String shopImgAddr= ImageUntil.generateThumbnails(shopImg,dest);
             shop.setShopImg(shopImgAddr);
     }
+
 }

@@ -22,25 +22,25 @@ public class ImageUntil {
     private static final SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMddHHmmss");
     private static final Random random=new Random();
     public static  String generateThumbnails(CommonsMultipartFile thumbnails,String targetAddr){
-        String realFileName=getRandomFileName();
-        String extension=getFileExtension(thumbnails);
-        makeDirPath(targetAddr);
-        String relativeAddr=targetAddr+realFileName+extension;
-        File desk=new File(PathUntil.getImeBasePath()+relativeAddr);
-        try{
-            Thumbnails.of(thumbnails.getInputStream())
-                    .size(500, 500).watermark(
-                    Positions.BOTTOM_RIGHT,
-                    ImageIO.read(new File(basePath+"school.jpg")), 0.5f)
-                    .outputQuality(0.8f).toFile(
-                    desk);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        return relativeAddr;
-    }
+     String realFileName=getRandomFileName();
+     String extension=getFileExtension(thumbnails);
+     makeDirPath(targetAddr);
+     String relativeAddr=targetAddr+realFileName+extension;
+     File desk=new File(PathUntil.getImeBasePath()+relativeAddr);
+     try{
+     Thumbnails.of(thumbnails.getInputStream())
+     .size(500, 500).watermark(
+     Positions.BOTTOM_RIGHT,
+     ImageIO.read(new File(basePath+"school.jpg")), 0.5f)
+     .outputQuality(0.8f).toFile(
+     desk);
+     }catch (IOException e){
+     e.printStackTrace();
+     }
+     return relativeAddr;
+     }
 
-    /**
+     /**
      * generateThumbnails重载
      * @param thumbnails
      * @param targetAddr
@@ -70,8 +70,6 @@ public class ImageUntil {
      * @param targetAddr
      */
     private static void makeDirPath(String targetAddr) {
-        //targetAddr="upload/items/shop/"+shopId+"/"
-        //realFileParentPath=D:\JAVA_top\Github\image\upload\items\shop\8
         String realFileParentPath=PathUntil.getImeBasePath()+targetAddr;
         File dirPath=new File(realFileParentPath);
         if(!dirPath.exists()){
@@ -81,7 +79,6 @@ public class ImageUntil {
 
     /**
      * getFileExtension重载
-     * @param cFile1
      * @return
      */
     private static String getFileExtension(File cFile1) {
@@ -103,7 +100,7 @@ public class ImageUntil {
      * 生成随机名称的文件
      * @return
      */
-    private static String getRandomFileName() {
+    public static String getRandomFileName() {
         int number=random.nextInt(8999)+10000;
         String data=simpleDateFormat.format(new Date());
         return data+number;
