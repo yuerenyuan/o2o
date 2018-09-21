@@ -39,7 +39,7 @@ public class ShopServiceTest extends BaseTest{
         shop.setCreateTime(new Date());
         shop.setEnableStatus(ShopStateEnum.CHECK.getState());
         shop.setAdvice("审核中");
-        File shopImg=new File("/JAVA_top/Github/o2o/image/fendou.jpg");
+        File shopImg=new File("/JAVA_top/Github/o2o/image/fendounew.jpg");
         ShopExecution se=shopService.addShop(shop,shopImg);
         Assert.assertEquals(ShopStateEnum.CHECK.getState(),se.getState());
     }

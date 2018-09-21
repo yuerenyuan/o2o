@@ -14,13 +14,13 @@ import java.util.Date;
 import java.util.Random;
 
 /**
+ * 路径：D:/JAVA_top/Github/image/+upload/items/shop/"+shopId+"/"+文件随机名称+后缀(.jpg)
  * Created by tanke on 2018/9/20.
  */
 public class ImageUntil {
     private static String basePath=Thread.currentThread().getContextClassLoader().getResource("").getPath();
     private static final SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMddHHmmss");
     private static final Random random=new Random();
-    private static CommonsMultipartFile cFile;
     public static  String generateThumbnails(CommonsMultipartFile thumbnails,String targetAddr){
         String realFileName=getRandomFileName();
         String extension=getFileExtension(thumbnails);
@@ -70,6 +70,8 @@ public class ImageUntil {
      * @param targetAddr
      */
     private static void makeDirPath(String targetAddr) {
+        //targetAddr="upload/items/shop/"+shopId+"/"
+        //realFileParentPath=D:\JAVA_top\Github\image\upload\items\shop\8
         String realFileParentPath=PathUntil.getImeBasePath()+targetAddr;
         File dirPath=new File(realFileParentPath);
         if(!dirPath.exists()){
@@ -83,7 +85,7 @@ public class ImageUntil {
      * @return
      */
     private static String getFileExtension(File cFile1) {
-        String originalFileName=cFile.getOriginalFilename();
+        String originalFileName=cFile1.getName();
         return originalFileName.substring(originalFileName.lastIndexOf("."));
     }
 
