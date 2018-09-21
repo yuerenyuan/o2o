@@ -46,3 +46,9 @@
 2018-09-21 14:55:30.602[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
 2018-09-21 14:55:30.602[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 测试店铺service(String), test(String), test(String), test(String), upload/items/shop/12/2018092114553015858.jpg(String), 2018-09-21 14:55:30.018(Timestamp), 0(Integer), 审核中(String), 1(Integer), 1(Integer), 12(Integer)
 2018-09-21 14:55:30.603[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-21 21:11:41.999[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-21 21:11:42.028[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), 1(Integer), 1(Integer), 测试店铺666(String), test(String), test(String), test(String), null, null, 2018-09-21 21:11:41.977(Timestamp), 2018-09-21 21:11:41.977(Timestamp), 0(Integer), 审核中(String)
+2018-09-21 21:11:42.030[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1
+2018-09-21 21:11:42.805[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
+2018-09-21 21:11:42.806[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 测试店铺666(String), test(String), test(String), test(String), upload/items/shop/13/2018092121114212284.jpg(String), 2018-09-21 21:11:41.977(Timestamp), 0(Integer), 审核中(String), 1(Integer), 1(Integer), 13(Integer)
+2018-09-21 21:11:42.807[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1

@@ -5,10 +5,9 @@ import com.o2o.dto.ShopExecution;
 import com.o2o.entity.PersonInfo;
 import com.o2o.entity.Shop;
 import com.o2o.enums.ShopStateEnum;
+import com.o2o.exceptions.ShopOperationException;
 import com.o2o.service.ShopService;
 import com.o2o.until.HttpServletRequestUntil;
-import com.o2o.until.ImageUntil;
-import com.o2o.until.PathUntil;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -17,10 +16,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -61,27 +57,23 @@ public class ShopManagementController {
             PersonInfo personInfo=new PersonInfo();
             personInfo.setUserID(1);
             shop.setOwner(personInfo);
-            File file=new File(PathUntil.getImeBasePath()+ ImageUntil.getRandomFileName());
+            ShopExecution shopExecution;
             try {
-                file.createNewFile();
-            } catch (IOException e) {
+                shopExecution = shopService.addShop(shop,shopImg.getInputStream(),shopImg.getOriginalFilename());
+                if(shopExecution.getState()== ShopStateEnum.CHECK.getState()){
+                    modelMap.put("SUCCESS",true);
+                }else{
+                    modelMap.put("SUCCESS",false);
+                    modelMap.put("errMsg",shopExecution.getStateInfo());
+                }
+            } catch (ShopOperationException e) {
                 modelMap.put("SUCCESS",false);
                 modelMap.put("errMsg",e.getMessage());
                 return modelMap;
-            }
-            try {
-                inputStreamToFile(shopImg.getInputStream(),file);
-            } catch (IOException e) {
+            }catch (IOException e) {
                 modelMap.put("SUCCESS",false);
                 modelMap.put("errMsg",e.getMessage());
                 return modelMap;
-            }
-            ShopExecution shopExecution=shopService.addShop(shop,file);
-            if(shopExecution.getState()== ShopStateEnum.CHECK.getState()){
-                modelMap.put("SUCCESS",true);
-            }else{
-                modelMap.put("SUCCESS",false);
-                modelMap.put("errMsg",shopExecution.getStateInfo());
             }
             return modelMap;
         }else{
@@ -90,29 +82,6 @@ public class ShopManagementController {
             return modelMap;
         }
     }
-    private static void inputStreamToFile(InputStream ins, File file){
-        FileOutputStream os=null;
-        try{
-            os=new FileOutputStream(file);
-            int bytesRead=0;
-            byte[] buffer=new byte[1024];
-            while((bytesRead=ins.read(buffer))!=-1){
-                os.write(buffer,0,bytesRead);
-            }
-        }catch (Exception e){
-            throw new RuntimeException("调用inputStreamToFile时出现异常"+e.getMessage());
-        }finally {
-            try{
-                if(os!=null){
-                    os.close();
-                }
-                if(ins!=null){
-                    ins.close();
-                }
-            }catch (IOException e){
-                throw new RuntimeException("关闭流时出现异常"+e.getMessage());
-            }
-        }
-    }
+
 
 }

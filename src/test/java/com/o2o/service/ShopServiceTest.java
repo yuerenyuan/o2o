@@ -12,6 +12,9 @@ import org.junit.Test;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Date;
 
 /**
@@ -21,7 +24,7 @@ public class ShopServiceTest extends BaseTest{
     @Resource
     private ShopService shopService;
     @Test
-    public void testAddShop(){
+    public void testAddShop()throws FileNotFoundException{
         Shop shop=new Shop();
         PersonInfo personInfo=new PersonInfo();
         ShopCategory shopCategory=new ShopCategory();
@@ -32,7 +35,7 @@ public class ShopServiceTest extends BaseTest{
         shop.setArea(area);
         shop.setShopCategory(shopCategory);
         shop.setOwner(personInfo);
-        shop.setShopName("测试店铺service");
+        shop.setShopName("测试店铺666");
         shop.setShopDesc("test");
         shop.setShopAddr("test");
         shop.setPhone("test");
@@ -40,7 +43,8 @@ public class ShopServiceTest extends BaseTest{
         shop.setEnableStatus(ShopStateEnum.CHECK.getState());
         shop.setAdvice("审核中");
         File shopImg=new File("/JAVA_top/Github/image/fendou.jpg");
-        ShopExecution se=shopService.addShop(shop,shopImg);
+        InputStream is=new FileInputStream(shopImg);
+        ShopExecution se=shopService.addShop(shop,is,shopImg.getName());
         Assert.assertEquals(ShopStateEnum.CHECK.getState(),se.getState());
     }
 }

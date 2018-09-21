@@ -14,6 +14,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.io.InputStream;
 import java.util.Date;
 
 /**
@@ -26,8 +27,8 @@ public class ShopServiceImpl implements ShopService{
 
     @Override
     @Transactional
-    public ShopExecution addShop(Shop shop, File shopImg) {
-        if(shopImg==null){
+    public ShopExecution addShop(Shop shop, InputStream shopImgInputStream,String fileName) {
+        if(shopImgInputStream==null){
            return new ShopExecution(ShopStateEnum.NULL_SHOP);
         }
         try{
@@ -40,10 +41,10 @@ public class ShopServiceImpl implements ShopService{
                 if(effectedNum<=0){
                     throw  new ShopOperationException("店铺创建失败");
                 }else{
-                    if(shopImg!=null){
+                    if(shopImgInputStream!=null){
                         //保存图片
                         try{
-                            addShopImg(shop,shopImg);
+                            addShopImg(shop,shopImgInputStream,fileName);
                         }catch (Exception e){
                             throw new ShopOperationException("addShopImgError:"+e.getMessage());
                         }
@@ -62,10 +63,10 @@ public class ShopServiceImpl implements ShopService{
 
 
 
-    private void addShopImg(Shop shop, File shopImg) {
+    private void addShopImg(Shop shop, InputStream shopImgInputStream,String fileName) {
             //获取shop图片目录的相对值路径
             String dest= PathUntil.getShopImagePath(shop.getShopId());
-            String shopImgAddr= ImageUntil.generateThumbnails(shopImg,dest);
+            String shopImgAddr= ImageUntil.generateThumbnails(shopImgInputStream,dest,fileName);
             shop.setShopImg(shopImgAddr);
     }
 
