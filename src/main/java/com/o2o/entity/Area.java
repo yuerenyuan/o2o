@@ -6,18 +6,18 @@ import java.util.Date;
  * Created by tanke on 2018/9/18.
  */
 public class Area {
-    private Integer areaID;
+    private Integer areaId;
     private String areaName;
     private Integer priority;
     private Date createTime;
     private Date lastEditTime;
 
-    public Integer getAreaID() {
-        return areaID;
+    public Integer getAreaId() {
+        return areaId;
     }
 
-    public void setAreaID(Integer areaID) {
-        this.areaID = areaID;
+    public void setAreaId(Integer areaId) {
+        this.areaId = areaId;
     }
 
     public String getAreaName() {

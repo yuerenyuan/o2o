@@ -12,6 +12,8 @@ import com.o2o.service.AreaService;
 import com.o2o.service.ShopCategoryService;
 import com.o2o.service.ShopService;
 import com.o2o.until.HttpServletRequestUntil;
+import com.o2o.until.VerifyCodeUntil;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,7 +43,7 @@ public class ShopManagementController {
     private AreaService areaService;
     @Resource
     private ShopCategoryService shopCategoryService;
-    @GetMapping("getshopinitinfo")
+    @GetMapping("/getshopinitinfo")
     @ResponseBody
     public Map<String,Object> getShopInitInfo(){
         Map<String,Object> modelMap=new HashMap<String,Object>();
@@ -50,9 +52,6 @@ public class ShopManagementController {
         try{
             areaList=areaService.getAreaList();
             shopCategoryList=shopCategoryService.getShopCategory(new ShopCategory());
-            System.out.println("----------------------------------进入此方法");
-            System.out.println(areaList.size()+"66666666666666666666666666666666666666666666666666666666666666");
-            System.out.println(shopCategoryList.size()+"66666666666666666666666666666666666666666666666666666666666666");
             modelMap.put("success",true);
             modelMap.put("areaList",areaList);
             modelMap.put("shopCategoryList",shopCategoryList);
@@ -62,19 +61,27 @@ public class ShopManagementController {
         }
             return modelMap;
     }
-    @PostMapping  ("/registerShop")
+    @RequestMapping("/registerShop")
     @ResponseBody
     public Map<String,Object> registerShop(HttpServletRequest request){
         Map<String,Object> modelMap=new HashMap<String,Object>();
+        if(!VerifyCodeUntil.isYang(request)){
+            modelMap.put("success",false);
+            modelMap.put("errMsg","输入了错误的验证码");
+            return modelMap;
+        }
         //接收并转换相应的参数，包括店铺信息和图片信息
         ObjectMapper mapper = new ObjectMapper();
-        String value= HttpServletRequestUntil.getString(request,"shopstr");
+        String value= HttpServletRequestUntil.getString(request,"shopStr");
         Shop shop = null;
         try {
             shop=mapper.readValue(value, Shop.class);
+            System.out.println("店铺是否为空+++++++++++++++++++++++++++++++++++++");
+            System.out.println(shop==null);
         } catch (IOException e) {
-            modelMap.put("SUCCESS",false);
-            modelMap.put("errMsg",e.getMessage());
+            modelMap.put("success",false);
+           // modelMap.put("errMsg",e.getMessage());
+           modelMap.put("errMsg","错误1");
             return modelMap;
         }
         CommonsMultipartFile shopImg=null;
@@ -84,7 +91,7 @@ public class ShopManagementController {
             MultipartHttpServletRequest multipartHttpServletRequest=(MultipartHttpServletRequest)request;
             shopImg=(CommonsMultipartFile)multipartHttpServletRequest.getFile("shopImg");
         }else{
-            modelMap.put("SUCCESS",false);
+            modelMap.put("success",false);
             modelMap.put("errMsg","上传图片不能为空");
             return modelMap;
         }
@@ -97,23 +104,21 @@ public class ShopManagementController {
             try {
                 shopExecution = shopService.addShop(shop,shopImg.getInputStream(),shopImg.getOriginalFilename());
                 if(shopExecution.getState()== ShopStateEnum.CHECK.getState()){
-                    modelMap.put("SUCCESS",true);
+                    modelMap.put("success",true);
                 }else{
-                    modelMap.put("SUCCESS",false);
+                    modelMap.put("success",false);
                     modelMap.put("errMsg",shopExecution.getStateInfo());
                 }
             } catch (ShopOperationException e) {
-                modelMap.put("SUCCESS",false);
-                modelMap.put("errMsg",e.getMessage());
-                return modelMap;
+                modelMap.put("success",false);
+              modelMap.put("errMsg",e.getMessage());
             }catch (IOException e) {
-                modelMap.put("SUCCESS",false);
+                modelMap.put("success",false);
                 modelMap.put("errMsg",e.getMessage());
-                return modelMap;
             }
             return modelMap;
         }else{
-            modelMap.put("SUCCESS",false);
+            modelMap.put("success",false);
             modelMap.put("errMsg","请输入店铺信息");
             return modelMap;
         }
