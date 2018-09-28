@@ -76,12 +76,9 @@ public class ShopManagementController {
         Shop shop = null;
         try {
             shop=mapper.readValue(value, Shop.class);
-            System.out.println("店铺是否为空+++++++++++++++++++++++++++++++++++++");
-            System.out.println(shop==null);
         } catch (IOException e) {
             modelMap.put("success",false);
-           // modelMap.put("errMsg",e.getMessage());
-           modelMap.put("errMsg","错误1");
+            modelMap.put("errMsg",e.getMessage());
             return modelMap;
         }
         CommonsMultipartFile shopImg=null;
@@ -98,7 +95,7 @@ public class ShopManagementController {
         //注册店铺
         if(shop!=null&&shopImg!=null){
             PersonInfo personInfo=new PersonInfo();
-            personInfo.setUserID(1);
+            personInfo.setUserId(1);
             shop.setOwner(personInfo);
             ShopExecution shopExecution;
             try {

@@ -1,12 +1,238 @@
-2018-09-22 16:55:02.134[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_categroy_img, priority, create_time, last_edit_time FROM tb_shop_category WHERE parent_id=? ORDER BY priority DESC 
-2018-09-22 16:55:02.179[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-==> Parameters: null
-2018-09-22 16:55:02.222[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-<==      Total: 0
-2018-09-22 17:01:15.602[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_categroy_img, priority, create_time, last_edit_time FROM tb_shop_category WHERE parent_id=? ORDER BY priority DESC 
-2018-09-22 17:01:15.629[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-==> Parameters: null
-2018-09-22 17:01:15.642[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-<==      Total: 0
-2018-09-22 17:10:06.844[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_categroy_img, priority, create_time, last_edit_time FROM tb_shop_category ORDER BY priority DESC 
-2018-09-22 17:10:06.871[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-==> Parameters: 
-2018-09-22 17:10:06.887[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-<==      Total: 1
-2018-09-22 17:12:43.604[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_categroy_img, priority, create_time, last_edit_time FROM tb_shop_category WHERE parent_id=? ORDER BY priority DESC 
-2018-09-22 17:12:43.626[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-==> Parameters: 1(Integer)
-2018-09-22 17:12:44.771[main]DEBUGcom.o2o.dao.ShopCategoryDao.queryShopCategory-<==      Total: 1
+2018-09-28 09:43:58.288[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 09:43:58.322[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 09:43:58.336[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 09:45:13.151[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 09:45:13.180[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 09:45:13.194[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 09:46:43.179[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 09:46:43.208[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 09:46:43.223[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 09:46:43.264[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, priority=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
+2018-09-28 09:46:43.269[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名(String), test(String), test(String), test(String), test(String), 6(Integer), 2018-09-28 09:46:43.228(Timestamp), 1(Integer), 审核中(String), 1(Integer), 1(Integer), 1(Integer)
+2018-09-28 09:46:43.344[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 09:50:45.197[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, last_edit_time=? where shop_id=? 
+2018-09-28 09:50:45.223[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), 2018-09-28 09:50:44.876(Timestamp), 1(Integer)
+2018-09-28 09:50:45.234[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 09:53:10.732[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, last_edit_time=? where shop_id=? 
+2018-09-28 09:53:10.762[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), 2018-09-28 09:53:10.414(Timestamp), 1(Integer)
+2018-09-28 09:53:10.771[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 09:54:23.738[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, last_edit_time=? where shop_id=? 
+2018-09-28 09:54:23.766[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), 2018-09-28 09:54:23.43(Timestamp), 1(Integer)
+2018-09-28 09:54:23.772[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 09:56:21.411[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, last_edit_time=? where shop_id=? 
+2018-09-28 09:56:21.437[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), 2018-09-28 09:56:21.132(Timestamp), 1(Integer)
+2018-09-28 09:56:21.446[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 09:58:02.465[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, last_edit_time=? where shop_id=? 
+2018-09-28 09:58:02.492[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), 2018-09-28 09:58:02.176(Timestamp), 1(Integer)
+2018-09-28 09:58:02.502[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 09:58:46.258[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, last_edit_time=? where shop_id=? 
+2018-09-28 09:58:46.285[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), 2018-09-28 09:58:45.957(Timestamp), 1(Integer)
+2018-09-28 09:58:46.293[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 09:59:48.249[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 09:59:48.287[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 09:59:48.304[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 09:59:48.311[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 09:59:48.316[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 09:59:48.311(Timestamp), 2018-09-28 09:59:48.311(Timestamp), 0(Integer), null
+2018-09-28 10:06:36.101[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:06:36.130[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:06:36.147[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:06:36.152[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:06:36.152[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:06:36.154[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:06:36.156[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 10:06:36.161[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, 1(Integer), 1(Integer), 修改后店铺名66(String), test(String), test(String), test(String), test(String), 6(Integer), 2018-09-28 10:06:36.156(Timestamp), 2018-09-28 10:06:36.156(Timestamp), 0(Integer), 审核中(String)
+2018-09-28 10:12:17.320[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:12:17.347[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:12:17.363[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:12:17.368[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:12:17.368[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:12:17.370[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:12:17.372[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 10:12:17.376[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, 1(Integer), 1(Integer), 修改后店铺名66(String), test(String), test(String), test(String), test(String), 6(Integer), 2018-09-28 10:12:17.372(Timestamp), 2018-09-28 10:12:17.372(Timestamp), 0(Integer), 审核中(String)
+2018-09-28 10:20:43.490[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:20:43.533[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:20:43.548[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:20:43.553[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:20:43.553[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:20:43.555[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:20:43.557[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 10:20:43.563[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, 1(Integer), 1(Integer), 修改后店铺名66(String), test(String), test(String), test(String), test(String), 6(Integer), 2018-09-28 10:20:43.557(Timestamp), 2018-09-28 10:20:43.557(Timestamp), 0(Integer), 审核中(String)
+2018-09-28 10:23:01.769[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:23:01.794[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:23:01.808[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:23:01.812[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:23:01.813[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:23:01.814[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:23:01.816[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 10:23:01.821[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, 1(Integer), 1(Integer), 修改后店铺名66(String), test(String), test(String), test(String), test(String), 6(Integer), 2018-09-28 10:23:01.816(Timestamp), 2018-09-28 10:23:01.816(Timestamp), 0(Integer), 审核中(String)
+2018-09-28 10:30:14.130[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:30:14.157[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:30:14.177[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:30:14.183[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 10:30:14.189[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 10:30:14.183(Timestamp), 2018-09-28 10:30:14.183(Timestamp), 0(Integer), null
+2018-09-28 10:32:56.264[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:32:56.286[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:32:56.300[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:32:56.307[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 10:32:56.312[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 10:32:56.307(Timestamp), 2018-09-28 10:32:56.307(Timestamp), 0(Integer), null
+2018-09-28 10:33:30.303[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:33:30.327[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:33:30.345[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:33:30.352[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 10:33:30.356[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 10:33:30.351(Timestamp), 2018-09-28 10:33:30.351(Timestamp), 0(Integer), null
+2018-09-28 10:34:55.093[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 10:34:55.119[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 10:34:55.132[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 10:34:55.138[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 10:34:55.143[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 10:34:55.138(Timestamp), 2018-09-28 10:34:55.138(Timestamp), 0(Integer), null
+2018-09-28 10:34:55.153[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1
+2018-09-28 10:34:56.287[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 10:34:56.287[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/26/2018092810345513735.jpg(String), 2018-09-28 10:34:55.138(Timestamp), 0(Integer), 26(Integer)
+2018-09-28 10:34:56.290[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 10:34:56.291[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 10:34:56.291[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/26/2018092810345513735.jpg(String), 2018-09-28 10:34:56.29(Timestamp), 0(Integer), 26(Integer)
+2018-09-28 10:34:56.293[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:07:11.323[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:07:11.358[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 11:07:11.380[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 11:07:11.387[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 11:07:11.392[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 11:07:11.387(Timestamp), 2018-09-28 11:07:11.387(Timestamp), 0(Integer), null
+2018-09-28 11:07:11.401[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1
+2018-09-28 11:07:11.899[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 11:07:11.900[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/27/2018092811071115965.jpg(String), 2018-09-28 11:07:11.387(Timestamp), 0(Integer), 27(Integer)
+2018-09-28 11:07:11.902[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:07:11.903[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 11:07:11.904[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/27/2018092811071115965.jpg(String), 2018-09-28 11:07:11.903(Timestamp), 0(Integer), 27(Integer)
+2018-09-28 11:07:11.906[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:16:26.157[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:16:26.182[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 11:16:26.197[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 11:16:26.205[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 11:16:26.209[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 11:16:26.204(Timestamp), 2018-09-28 11:16:26.204(Timestamp), 0(Integer), null
+2018-09-28 11:16:26.218[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1
+2018-09-28 11:16:26.701[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 11:16:26.702[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/28/2018092811162612669.jpg(String), 2018-09-28 11:16:26.204(Timestamp), 0(Integer), 28(Integer)
+2018-09-28 11:16:26.704[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:16:26.705[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 11:16:26.705[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/28/2018092811162612669.jpg(String), 2018-09-28 11:16:26.705(Timestamp), 0(Integer), 28(Integer)
+2018-09-28 11:16:26.708[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:23:59.577[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:23:59.625[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 11:23:59.646[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 11:23:59.657[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 11:23:59.663[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 11:23:59.656(Timestamp), 2018-09-28 11:23:59.656(Timestamp), 0(Integer), null
+2018-09-28 11:23:59.671[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1
+2018-09-28 11:24:00.245[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 11:24:00.246[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/29/2018092811235913737.jpg(String), 2018-09-28 11:23:59.656(Timestamp), 0(Integer), 29(Integer)
+2018-09-28 11:24:00.249[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:24:00.251[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 11:24:00.251[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/29/2018092811235913737.jpg(String), 2018-09-28 11:24:00.25(Timestamp), 0(Integer), 29(Integer)
+2018-09-28 11:24:00.272[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:25:53.052[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:25:53.078[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 7(Integer)
+2018-09-28 11:25:53.092[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 11:25:53.099[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 11:25:53.104[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), null, null, 修改后店铺名66(String), null, null, null, null, null, 2018-09-28 11:25:53.099(Timestamp), 2018-09-28 11:25:53.099(Timestamp), 0(Integer), null
+2018-09-28 11:25:53.114[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1
+2018-09-28 11:25:53.621[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 11:25:53.622[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/30/2018092811255318951.jpg(String), 2018-09-28 11:25:53.099(Timestamp), 0(Integer), 30(Integer)
+2018-09-28 11:25:53.624[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:25:53.625[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 11:25:53.626[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名66(String), upload/items/shop/30/2018092811255318951.jpg(String), 2018-09-28 11:25:53.625(Timestamp), 0(Integer), 30(Integer)
+2018-09-28 11:25:53.628[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 11:31:00.915[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:31:00.944[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 7(Integer)
+2018-09-28 11:31:00.961[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 11:31:00.967[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 11:31:00.974[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名789(String), null, null, null, null, null, 2018-09-28 11:31:00.967(Timestamp), 2018-09-28 11:31:00.967(Timestamp), 0(Integer), null
+2018-09-28 11:32:21.034[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:32:21.057[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 30(Integer)
+2018-09-28 11:32:21.071[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 11:49:36.558[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:49:36.580[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 11:49:36.597[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 11:51:13.650[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:51:13.677[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 11:51:13.687[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 11:54:31.419[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:54:31.446[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 11:54:31.459[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 11:55:26.799[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:55:26.823[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 11:55:26.836[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 11:57:11.007[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:57:11.036[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 14(Integer)
+2018-09-28 11:57:11.051[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 11:58:02.043[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:58:02.074[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 11:58:02.086[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 11:59:11.755[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 11:59:11.779[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 11:59:11.791[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 12:00:12.143[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 12:00:12.176[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 12:00:12.189[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 12:45:13.423[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 12:45:13.456[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 12:45:13.469[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 12:48:18.120[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 12:48:18.143[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 14(Integer)
+2018-09-28 12:48:18.161[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 12:51:39.901[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 12:51:39.923[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 29(Integer)
+2018-09-28 12:51:39.935[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 0
+2018-09-28 12:55:03.197[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 12:55:03.219[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 14(Integer)
+2018-09-28 12:55:03.235[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 12:55:03.385[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 12:55:03.390[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名789(String), null, null, null, null, null, 2018-09-28 12:55:03.385(Timestamp), 2018-09-28 12:55:03.385(Timestamp), 0(Integer), null
+2018-09-28 12:57:53.488[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 12:57:53.518[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 14(Integer)
+2018-09-28 12:57:53.538[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 12:57:53.545[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 12:57:53.552[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名789(String), null, null, null, null, null, 2018-09-28 12:57:53.545(Timestamp), 2018-09-28 12:57:53.545(Timestamp), 0(Integer), null
+2018-09-28 12:58:09.870[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 12:58:09.893[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 14(Integer)
+2018-09-28 12:58:09.906[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 12:58:09.912[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 12:58:09.918[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名789(String), null, null, null, null, null, 2018-09-28 12:58:09.912(Timestamp), 2018-09-28 12:58:09.912(Timestamp), 0(Integer), null
+2018-09-28 13:04:48.729[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 13:04:48.758[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 14(Integer)
+2018-09-28 13:04:48.773[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 13:08:46.027[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 13:08:46.055[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 14(Integer)
+2018-09-28 13:08:46.070[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 13:17:02.718[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 13:17:02.743[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 13:17:02.760[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 13:17:02.766[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 13:17:02.771[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名789(String), null, null, null, null, null, 2018-09-28 13:17:02.766(Timestamp), 2018-09-28 13:17:02.766(Timestamp), 0(Integer), null
+2018-09-28 13:23:03.144[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 13:23:03.173[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 13:23:03.189[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 13:23:03.195[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 13:23:03.200[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: null, null, null, 修改后店铺名789(String), null, null, null, null, null, 2018-09-28 13:23:03.195(Timestamp), 2018-09-28 13:23:03.195(Timestamp), 0(Integer), null
+2018-09-28 13:26:31.178[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 13:26:31.200[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 13:26:31.214[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 13:26:31.220[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc ,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status ,advice) VALUE (?,?,? ,?,?,?,?,?,? ,?,?,?,?) 
+2018-09-28 13:26:31.225[main]DEBUGcom.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Integer), null, null, 修改后店铺名789(String), null, null, null, null, null, 2018-09-28 13:26:31.22(Timestamp), 2018-09-28 13:26:31.22(Timestamp), 0(Integer), null
+2018-09-28 13:26:31.235[main]DEBUGcom.o2o.dao.ShopDao.insertShop-<==    Updates: 1
+2018-09-28 13:26:32.310[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 13:26:32.311[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名789(String), upload/items/shop/31/2018092813263118507.jpg(String), 2018-09-28 13:26:31.22(Timestamp), 0(Integer), 31(Integer)
+2018-09-28 13:26:32.314[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 13:26:32.315[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=?, enable_status=? where shop_id=? 
+2018-09-28 13:26:32.316[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名789(String), upload/items/shop/31/2018092813263118507.jpg(String), 2018-09-28 13:26:32.315(Timestamp), 0(Integer), 31(Integer)
+2018-09-28 13:26:32.318[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 13:31:32.331[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 13:31:32.356[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 1(Integer)
+2018-09-28 13:31:32.370[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 13:31:32.859[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=? where shop_id=? 
+2018-09-28 13:31:32.860[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名789(String), upload/items/shop/1/2018092813313213494.jpg(String), 2018-09-28 13:31:32.839(Timestamp), 1(Integer)
+2018-09-28 13:31:32.863[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1
+2018-09-28 13:51:18.137[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==>  Preparing: SELECT s.shop_id, s.owner_id, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice FROM tb_shop s, tb_area a, tb_shop_category sc WHERE a.area_id=s.area_id and sc.shop_category_id=s.shop_category_id and s.shop_id=? 
+2018-09-28 13:51:18.163[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-==> Parameters: 2(Integer)
+2018-09-28 13:51:18.179[main]DEBUGcom.o2o.dao.ShopDao.queryShopById-<==      Total: 1
+2018-09-28 13:51:18.791[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=? where shop_id=? 
+2018-09-28 13:51:18.792[main]DEBUGcom.o2o.dao.ShopDao.updateShop-==> Parameters: 修改后店铺名987(String), upload/items/shop/2/2018092813511812009.jpg(String), 2018-09-28 13:51:18.77(Timestamp), 2(Integer)
+2018-09-28 13:51:18.802[main]DEBUGcom.o2o.dao.ShopDao.updateShop-<==    Updates: 1

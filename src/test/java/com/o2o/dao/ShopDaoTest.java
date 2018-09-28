@@ -19,12 +19,13 @@ public class ShopDaoTest extends BaseTest{
     @Resource
     private ShopDao shopDao;
     @Test
+    @Ignore
     public void insertShop(){
         Shop shop=new Shop();
         PersonInfo personInfo=new PersonInfo();
         ShopCategory shopCategory=new ShopCategory();
         Area area=new Area();
-        personInfo.setUserID(1);
+        personInfo.setUserId(1);
         shopCategory.setShopCategoryId(1);
         area.setAreaId(1);
         shop.setArea(area);
@@ -51,5 +52,10 @@ public class ShopDaoTest extends BaseTest{
         int num=shopDao.updateShop(shop);
         Assert.assertEquals(1,num);
     }
+    @Test
+    public void queryShopById(){
+       Shop shop =shopDao.queryShopById(14);
+        System.out.println(shop.getShopName()+shop.getShopId());
 
+    }
 }

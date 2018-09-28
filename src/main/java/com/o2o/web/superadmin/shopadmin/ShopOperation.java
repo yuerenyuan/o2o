@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ShopOperation {
     @GetMapping("/shopoperation")
     public String shopOperation(){
-        System.out.println("-------------------------进入op------------------");
         return "shop/shopoperation";
     }
 }

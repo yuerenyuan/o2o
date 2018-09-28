@@ -61,9 +61,43 @@ public class ShopServiceImpl implements ShopService{
         return new ShopExecution(ShopStateEnum.CHECK,shop);
     }
 
+    @Override
+    public ShopExecution updateShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException{
+        //店铺不存在
+        if(shop==null||shop.getShopId()==null){
+            return new ShopExecution(ShopStateEnum.NULL_SHOP);
+        }else{
+            try{
+                //判断是否处理图片
+                if(shopImgInputStream!=null&&fileName!=null&&!"".equals(fileName)){
+                    Shop shop1=shopDao.queryShopById(shop.getShopId());
+                    String shopImg=shop1.getShopImg();
+                    if(shopImg!=null){
+                        //删除图片
+                        ImageUntil.deleteFileOrPath(shopImg);
+                    }
+                    addShopImg(shop,shopImgInputStream,fileName);
+                }
+                //更新店铺信息
+                shop.setLastEditTime(new Date());
+                int num1= shopDao.updateShop(shop);
+                if(num1<=0){
+                    return   new ShopExecution(ShopStateEnum.INNER_ERROR);
+                }else{
+                    return  new ShopExecution(ShopStateEnum.SUCCESS,shop);
+                }
+            }catch (ShopOperationException e){
+                throw new ShopOperationException("updateShopError:"+e.getMessage());
+            }
+        }
+    }
 
+    @Override
+    public Shop queryShopById(Integer shopId) {
+        return shopDao.queryShopById(shopId);
+    }
 
-    private void addShopImg(Shop shop, InputStream shopImgInputStream,String fileName) {
+    private void addShopImg(Shop shop, InputStream shopImgInputStream, String fileName) {
             //获取shop图片目录的相对值路径
             String dest= PathUntil.getShopImagePath(shop.getShopId());
             String shopImgAddr= ImageUntil.generateThumbnails(shopImgInputStream,dest,fileName);

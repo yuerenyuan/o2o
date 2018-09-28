@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -75,6 +76,25 @@ public class ImageUntil {
         int number=random.nextInt(8999)+10000;
         String data=simpleDateFormat.format(new Date());
         return data+number;
+    }
 
+    /**
+     *
+     * @param shopImgInputStream
+     * @param fileName
+     * @return
+     */
+    public static void deleteFileOrPath(String storePath){
+        String path= PathUntil.getImeBasePath()+storePath;
+        File file=new File(path);
+        if(file.exists()){
+            if(file.isDirectory()){
+                File[] files=file.listFiles();
+                for(int i=0;i<files.length;i++){
+                    files[i].delete();
+                }
+            }
+            file.delete();
+        }
     }
 }

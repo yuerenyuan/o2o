@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by tanke on 2018/9/18.
  */
 public class PersonInfo {
-    private Integer  userID;
+    private Integer  userId;
     private String name;
     private String profileImg;
     private String email;
@@ -17,12 +17,12 @@ public class PersonInfo {
     private Date createTime;
     private Date lastEditTime;
 
-    public Integer getUserID() {
-        return userID;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserID(Integer userID) {
-        this.userID = userID;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getName() {
